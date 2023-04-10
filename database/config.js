@@ -11,7 +11,7 @@ const dbConnection = async() => {
     //         useUnifiedTopology: true
     //    });
 
-        await mongoose.connect('mongodb+srv://user_node_cafe:PERVBy0j81MHLYXx@cluster0.xuahyky.mongodb.net/cafeDB');
+        await mongoose.connect('mongodb+srv://user_node_cafe:mYafOnBkdTDh1Rod@cluster0.xuahyky.mongodb.net/cafeDB');
 
         console.log('Base de datos online');
     } catch (error) {
