@@ -1,9 +1,7 @@
 const mongoose = require('mongoose');
-//const dotenv = require('dotenv');
 
 const dbConnection = async() => {
 
-    console.log(`La variable MONGODB_CNN vale ${process.env.MONGODB_CNN}`);
     try {
      
         await mongoose.connect(process.env.MONGODB_CNN, {
