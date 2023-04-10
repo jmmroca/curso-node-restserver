@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
+//const dotenv = require('dotenv');
 
 const dbConnection = async() => {
 
+    console.log(`La variable MONGODB_CNN vale ${process.env.MONGODB_CNN}`);
     try {
      
-        console.log(`La variable MONGODB_CNN vale ${MONGODB_CNN}`);
         await mongoose.connect(process.env.MONGODB_CNN, {
             useNewUrlParser: true,
             useUnifiedTopology: true
