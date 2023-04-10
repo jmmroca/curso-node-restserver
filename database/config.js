@@ -11,9 +11,9 @@ const dbConnection = async() => {
     //         useUnifiedTopology: true
     //    });
 
-    await mongoose.connect(process.env.MONGODB_CNN);
+        await mongoose.connect('mongodb+srv://user_node_cafe:PERVBy0j81MHLYXx@cluster0.xuahyky.mongodb.net/cafeDB');
 
-       console.log('Base de datos online');
+        console.log('Base de datos online');
     } catch (error) {
         console.log(Error);
         throw new Error('Error a la hora de iniciar la base de datos');
