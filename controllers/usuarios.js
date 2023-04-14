@@ -2,7 +2,7 @@ const { response,request } = require('express');
 const bcryptjs = require('bcryptjs');
 const Usuario = require('../models/usuario');
 
-const usuariosGet = async(req, res = response) => {
+const usuariosGet = async(req = request, res = response) => {
 
     const { limite = 5, desde = 0 } = req.query;
     const query = { estado:true };
@@ -33,6 +33,8 @@ const usuariosPut = async(req, res = response) => {
     }
 
     const usuario = await Usuario.findByIdAndUpdate( id, resto, {new: true} );
+    // Fernando tiene esta linea como aqui abajo:
+    //const usuario = await Usuario.findByIdAndUpdate( id, resto );
 
     res.json(usuario);
 }
@@ -49,7 +51,6 @@ const usuariosPost = async(req, res = response) => {
     await usuario.save();
 
     res.json({
-        msg: 'post API - Controlador',
         usuario
     })
 }
